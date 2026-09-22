@@ -1,6 +1,6 @@
 import { JevDecision } from '../types/game';
 
-const API_BASE = '/api';
+const API_BASE = 'https://can-you-beat-jev.vercel.app/api';
 
 function optimalTicTacToeMoves(board: string[], turn = 'O'): number[] {
   const lines = [
