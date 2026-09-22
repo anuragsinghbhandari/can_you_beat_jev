@@ -1,0 +1,12 @@
+{
+  "name": "can-you-beat-jev",
+  "version": "1.0.0",
+  "description": "Can You Beat Jev? - Short competitive games against TypeSafe's System One AI model.",
+  "scripts": {
+    "dev:backend": "uv run uvicorn main:app --host 0.0.0.0 --port 8000 --reload",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "build": "npm run build --prefix frontend",
+    "start": "uv run uvicorn main:app --host 0.0.0.0 --port 8000",
+    "dev": "npm run dev:frontend"
+  }
+}

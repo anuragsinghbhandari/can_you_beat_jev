@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  
+  body {
+    background-color: #08090E;
+    color: #F1F5F9;
+    font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Custom dark scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #08090E;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #20283C;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00F0FF;
+  }
+}
+
+/* Background cyber grid */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.cyber-radial-glow {
+  background: radial-gradient(circle at 50% 15%, rgba(0, 240, 255, 0.08) 0%, rgba(168, 85, 247, 0.04) 40%, transparent 70%);
+}
+
+/* Glass panel */
+.glass-panel {
+  background: rgba(18, 22, 34, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid #20283C;
+}
+
+.glass-panel-interactive {
+  background: rgba(18, 22, 34, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid #20283C;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-interactive:hover {
+  border-color: #00F0FF;
+  box-shadow: 0 0 20px -5px rgba(0, 240, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Scanline effect */
+.scanlines {
+  position: relative;
+  overflow: hidden;
+}
+.scanlines::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+  background-size: 100% 4px;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.3;
+}
